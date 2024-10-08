@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <div style="display: flex">
+        <div>
+            Введите сумму:
+        </div>
+        <div style="margin-left: 100px">
+            KZT(tenge)
+        </div>
+        <div style="margin-left: 100px">
+            USD(dollar)
+        </div>
+        <div style="margin-left: 100px">
+            EUR(euro)
+        </div>
+        </div>
+
+        <div style="display: flex; margin-top: 10px">
+        <div>
+            <input type="text" style="width: 100px" id="summ">
+        </div>
+        <div>
+            <select style="margin-left: 10px" id="currencySelect">
+                <option value="KZT">KZT</option>
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+            </select>
+        </div>
+            <div><input readonly type="text" id="idKZT"></div>
+            <div><input readonly type="text" id="idUSD"></div>
+            <div><input readonly type="text" id="idEUR"></div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("currencySelect").addEventListener("change", calculate)
+        function calculate(){
+            if (document.getElementById("currencySelect").value==="KZT")
+            {
+                document.getElementById("idKZT").value = " - "
+                idUSD.value = summ.value * 488.4
+                idEUR.value = summ.value * 537
+            }
+            else if (document.getElementById("currencySelect").value==="USD")
+            {
+                document.getElementById("idUSD").value = " - "
+                idKZT.value = summ.value * 488.4
+                idEUR.value = summ.value * 0.909
+            }
+            else if (document.getElementById("currencySelect").value==="EUR")
+            {
+                document.getElementById("idEUR").value = " - "
+                idKZT.value = summ.value * 537
+                idUSD.value = summ.value * 1.0995
+            }
+        }
+    </script>
+</body>
+</html>
